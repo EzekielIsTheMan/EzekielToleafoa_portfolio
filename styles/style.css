@@ -15,37 +15,7 @@ header {
 
 .logo{
   padding: 5px 50px;
-  width: 200px;
-}
-
-nav {
-  color: white;
-  float: right;
-  padding: 40px 50px 0px 0px;
-}
-
-/* sybau 67 */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* sybau 67 */
-nav li {
-  display: inline-block;
-}
-
-/* sybau 67 */
-nav li a {
-  color: rgb(149, 11, 11);
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.logo{
-  padding: 5px 50px;
-  width: 200px;
+  width: 100px;
 }
 
 nav {
