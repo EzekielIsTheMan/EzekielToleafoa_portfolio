@@ -53,8 +53,34 @@ nav li a {
   color: rgb(149, 11, 11);
   padding: 14px 16px;
   text-decoration: none;
-<<<<<<< HEAD
 }
-=======
+
+@media (min-width: 750) {
+  
+  /*burger not display*/
+  .toggle {
+    display: none;
+  }
+
+  /*menu in inline block*/
+  #menu {
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    right: 0;
+  }
+
+  /*items on menu are also an inline block*/
+  #menu li{
+    display: inline-block;
+  }
+
+  /*different styling for when mouse cursor hovered over menu items*/
+  #menu li a:hover {
+    border: 2px solid #fff;
+    background: transparent;
+    color: white;
+  }
 }
->>>>>>> 949282e8aa79cc0f410969bf07673b9363375a15
