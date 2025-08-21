@@ -90,6 +90,7 @@ nav li a {
   height: 100vh;
   position: relative;
   transition: all 0.3s;
+  z-index: 999;
 }
 
 .menu-open{
@@ -142,4 +143,78 @@ nav li a {
 
 #menu.open .toggle .bar3 {
   transform: rotate(-45deg) translate(5px, -10px);
+}
+
+/*
+==========================================
+GRID STYLING
+==========================================
+*/
+
+#intro {
+  display: grid;
+
+  grid-template-rows: [image-start] 10vw repeat(3, auto) 10vw [imgage-end];
+  grid-template-columns: [image-start] 1fr [image-end];
+
+  grid-template-areas: '....'
+                       'headline'
+                       'text'
+                       'button'
+                       '....';
+  text-align: center;
+  background-color: #333;
+  color: white;
+  position: absolute;
+  top: 0;
+}
+
+.intro__headline {
+  grid-area: headline;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-self: end;
+}
+
+.intro__text {
+  grid-area: text;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font: "libertinus-sans-regular";
+}
+
+.intro__button {
+  grid-area: button;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.intro__image {
+  grid-area: image;
+  height: 100vh;
+  object-fit: cover;
+  mix-blend-mode: overlay;
+}
+
+@media (min-width: 640px) {
+
+  #intro {
+    background-color: transparent;
+    color: black;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: '......... image'
+                          'headline image'
+                          'text     image'
+                          'button   image'
+                         '......... image';
+    grid-column-gap: 20px;
+    text-align: left;
+  }
+
+  .intro__image {
+    height: 100vh;
+    object-fit: cover;
+    mix-blend-mode: normal;
+  }
+
 }
