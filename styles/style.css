@@ -228,4 +228,43 @@ GRID STYLING
 
 #favourites img {
   position:absolute;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+/*visual styling for text over images*/
+.info {
+  position: absolute;
+  margin-top: 2rem;
+  text-align: center;
+  width: 100vw;
+  background-color: rgb(243, 73, 31);
+  font-size: 2rem;
+  line-height: 1;
+  padding: 1rem 0;
+}
+
+@keyframes FadeInOut {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#rent img.image1 {
+  animation-name: FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-direction: alternate;
 }
