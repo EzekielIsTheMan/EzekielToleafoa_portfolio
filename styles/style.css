@@ -219,3 +219,13 @@ GRID STYLING
   }
 
 }
+
+/*== styling for images in rent section ==*/
+
+#favourites {
+  height: 100vh;
+}
+
+#favourites img {
+  position:absolute;
+}
