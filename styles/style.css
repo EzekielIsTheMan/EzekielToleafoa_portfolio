@@ -268,3 +268,14 @@ GRID STYLING
   animation-duration: 5s;
   animation-direction: alternate;
 }
+
+/*==Styling for experience page ==*/
+
+#xp {
+  display: grid;
+  grid-template-rows: [image-start] 10vw auto 10vw [image-end];
+  grid-template-columns: [image-start] 1fr [image-end];
+  grid-template-areas: '.......'
+                       'headline'
+                       '........';
+}
