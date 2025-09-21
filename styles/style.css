@@ -296,3 +296,58 @@ top: 0;
   font-size: 2rem;
   margin-bottom: .5em;
 }
+
+@media (min-width: 640px) {
+  #xp {
+    background-color: transparent;
+    color: black;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: '......... image'
+                         'headline  image'
+                         '......... image';
+  grid-column-gap: 20px;
+  text-align: left;
+  }
+
+  .xp__image {
+    height: 100vh;
+    object-fit: cover;
+    mix-blend-mode: normal;
+  }
+}
+
+/*==Styling for modal form==*/
+
+iframe {
+  width: 100%;
+}
+
+#modal {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+}
+
+.modalcontent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50, 0);
+  background: #fff;
+  width: 85%;
+  padding: 10px;
+}
+
+/*Adjustments for wide screen*/
+@media (min-width: 1440px) {
+  .modalcontent {
+    top: 50%;
+    transform: translate (-50%,-50%);
+    width: 45%;
+  }
+}
