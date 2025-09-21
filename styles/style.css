@@ -1,1 +1,315 @@
-.libertinus-sans-regular { font-family: "Libertinus Sans", sans-serif; font-weight: 400; font-style: normal; } .libertinus-sans-bold { font-family: "Libertinus Sans", sans-serif; font-weight: 700; font-style: normal; } body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; text-align: center; } /* sybau 67 */ header { background-color: #e1e3c3; height: 160px; text-align: left; width: 100%; } .logo{ padding: 5px 50px; width: 100px; } nav { color: white; float: right; padding: 40px 50px 0px 0px; } /* sybau 67 */ nav ul { list-style-type: none; margin: 0; padding: 0; } /* sybau 67 */ nav li { display: inline-block; } /* sybau 67 */ nav li a { color: rgb(149, 11, 11); padding: 14px 16px; text-decoration: none; } @media (min-width: 750px) { /*burger not display*/ .toggle { display: none; } /*menu in inline block*/ #menu { margin: 0; padding: 15px 0; width: 100%; display: inline-block; position: relative; right: 0; } /*items on menu are also an inline block*/ #menu li{ display: inline-block; } /*different styling for when mouse cursor hovered over menu items*/ #menu li a:hover, #menu li a:focus { border: 2px solid #fff; background: transparent; color: white; } } .container{ width: 100vw; height: 100vh; position: relative; transition: all 0.3s; z-index: 999; } .menu-open{ transform: translate(-230px ,0) } #menu { background: #e1e3c3; text-align: center; width: 230px; height: 100%; position: fixed; margin: 0; right: -230px; padding: 0px; } #menu li a:hover li a:focus { border-color: transparent; background: #0077B6; color: #CAF0F8; } .toggle { display: block; position: absolute; left: -65px; cursor: pointer; background: #0077B6; padding: 15px 15px 10px; } .toggle .bar1, .toggle .bar2, .toggle .bar3 { width: 35px; height: 4px; background: whitesmoke; margin-bottom: 8px; transition: all 0.4s; } #menu.open .toggle .bar1 { transform: rotate(45deg) translate(8px, 11px); } #menu.open .toggle .bar2 { opacity: 0; } #menu.open .toggle .bar3 { transform: rotate(-45deg) translate(5px, -10px); } /* ========================================== GRID STYLING ========================================== */ #intro { display: grid; grid-template-rows: [image-start] 10vw repeat(3, auto) 10vw [imgage-end]; grid-template-columns: [image-start] 1fr [image-end]; grid-template-areas: '....' 'headline' 'text' 'button' '....'; text-align: center; background-color: #333; color: white; position: absolute; top: 0; } .intro__headline { grid-area: headline; margin-left: 1rem; margin-right: 1rem; align-self: end; } .intro__text { grid-area: text; margin-left: 1rem; margin-right: 1rem; font: "libertinus-sans-regular"; } .intro__button { grid-area: button; margin-left: 1rem; margin-right: 1rem; } .intro__image { grid-area: image; height: 100vh; object-fit: cover; mix-blend-mode: overlay; } @media (min-width: 640px) { #intro { background-color: transparent; color: black; grid-template-columns: repeat(2,1fr); grid-template-areas: '......... image' 'headline image' 'text image' 'button image' '......... image'; grid-column-gap: 20px; text-align: left; } .intro__image { height: 100vh; object-fit: cover; mix-blend-mode: normal; } } /*== styling for images in rent section ==*/ #favourites { height: 100vh; } #favourites img { position:absolute; left: 0; height: 100vh; width: 100vw; object-fit: cover; } /*visual styling for text over images*/ .info { position: absolute; margin-top: 2rem; text-align: center; width: 100vw; background-color: rgb(243, 73, 31); font-size: 2rem; line-height: 1; padding: 1rem 0; } @keyframes FadeInOut { 0% { opacity: 1; } 45% { opacity: 1; } 55% { opacity: 0; } 100% { opacity: 0; } } #rent img.image1 { animation-name: FadeInOut; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-duration: 5s; animation-direction: alternate; } /*==Styling for experience page ==*/ #xp { display: grid; grid-template-rows: [image-start] 10vw auto 10vw [image-end]; grid-template-columns: [image-start] 1fr [image-end]; grid-template-areas: '.......' 'headline' '........'; text-align: center; background-color: #333; color: white; position: absolute; top: 0; } .xp__headline { grid-area: headline; height: 100vh; object-fit: cover; mix-blend-mode: overlay; } .xp_headline { font-size: 2rem; margin-bottom: .5em; } @media (min-width: 640px) { #xp { background-color: transparent; color: black; grid-template-columns: repeat(2,1fr); grid-template-areas: '......... image' 'headline image' '......... image'; grid-column-gap: 20px; text-align: left; } .xp__image { height: 100vh; object-fit: cover; mix-blend-mode: normal; } } /*==Styling for modal form==*/ iframe { width: 100%; } #modal { position: fixed; font-family: Arial, Helvetica, sans-serif; top: 0; left: 0; background: rgba(0, 0, 0, 0.8); z-index: 99999; height: 100%; width: 100%; } .modalcontent { position: absolute; top: 0; left: 50%; transform: translate(-50, 0); background: #fff; width: 85%; padding: 10px; } /*Adjustments for wide screen*/ @media (min-width: 1440px) { .modalcontent { top: 50%; transform: translate (-50%,-50%); width: 45%; } }
+.libertinus-sans-regular {
+    font-family: "Libertinus Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .libertinus-sans-bold {
+    font-family: "Libertinus Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  /* Header */
+  header {
+    background-color: #e1e3c3;
+    height: 160px;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .logo {
+    padding: 5px 50px;
+    width: 100px;
+  }
+  
+  nav {
+    float: right;
+    padding: 40px 50px 0px 0px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+  }
+  
+  nav li a {
+    color: rgb(149, 11, 11);
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 750px) {
+    .toggle {
+      display: none;
+    }
+  
+    #menu {
+      margin: 0;
+      padding: 15px 0;
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      right: 0;
+    }
+  
+    #menu li {
+      display: inline-block;
+    }
+  
+    #menu li a:hover,
+    #menu li a:focus {
+      border: 2px solid #fff;
+      background: transparent;
+      color: white;
+    }
+  }
+  
+  /* Mobile menu */
+  .container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transition: all 0.3s;
+    z-index: 999;
+  }
+  
+  .menu-open {
+    transform: translate(-230px, 0);
+  }
+  
+  #menu {
+    background: #e1e3c3;
+    text-align: center;
+    width: 230px;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    right: -230px;
+    padding: 0;
+  }
+  
+  #menu li a:hover,
+  #menu li a:focus {
+    border-color: transparent;
+    background: #0077B6;
+    color: #CAF0F8;
+  }
+  
+  .toggle {
+    display: block;
+    position: absolute;
+    left: -65px;
+    cursor: pointer;
+    background: #0077B6;
+    padding: 15px 15px 10px;
+  }
+  
+  .toggle .bar1,
+  .toggle .bar2,
+  .toggle .bar3 {
+    width: 35px;
+    height: 4px;
+    background: whitesmoke;
+    margin-bottom: 8px;
+    transition: all 0.4s;
+  }
+  
+  #menu.open .toggle .bar1 {
+    transform: rotate(45deg) translate(8px, 11px);
+  }
+  
+  #menu.open .toggle .bar2 {
+    opacity: 0;
+  }
+  
+  #menu.open .toggle .bar3 {
+    transform: rotate(-45deg) translate(5px, -10px);
+  }
+  
+  /* Intro grid */
+  #intro {
+    display: grid;
+    grid-template-rows: [image-start] 10vw repeat(3, auto) 10vw [image-end];
+    grid-template-columns: [image-start] 1fr [image-end];
+    grid-template-areas: '....'
+                         'headline'
+                         'text'
+                         'button'
+                         '....';
+    text-align: center;
+    background-color: #333;
+    color: white;
+    position: relative;
+  }
+  
+  .intro__headline {
+    grid-area: headline;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-self: end;
+  }
+  
+  .intro__text {
+    grid-area: text;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "Libertinus Sans", sans-serif;
+  }
+  
+  .intro__button {
+    grid-area: button;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .intro__image {
+    grid-area: image;
+    height: 100vh;
+    object-fit: cover;
+    mix-blend-mode: overlay;
+  }
+  
+  @media (min-width: 640px) {
+    #intro {
+      background-color: transparent;
+      color: black;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas: '......... image'
+                            'headline image'
+                            'text     image'
+                            'button   image'
+                            '......... image';
+      grid-column-gap: 20px;
+      text-align: left;
+    }
+  
+    .intro__image {
+      height: 100vh;
+      object-fit: cover;
+      mix-blend-mode: normal;
+    }
+  }
+  
+  /* Favourites section */
+  #favourites {
+    height: 100vh;
+  }
+  
+  #favourites img {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  
+  .info {
+    position: absolute;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100vw;
+    background-color: rgb(243, 73, 31);
+    font-size: 2rem;
+    line-height: 1;
+    padding: 1rem 0;
+  }
+  
+  @keyframes FadeInOut {
+    0%, 45% { opacity: 1; }
+    55%, 100% { opacity: 0; }
+  }
+  
+  #favourites img.image1 {
+    animation-name: FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+  }
+  
+  /* XP section */
+  #xp {
+    display: grid;
+    grid-template-rows: [image-start] 10vw auto 10vw [image-end];
+    grid-template-columns: [image-start] 1fr [image-end];
+    grid-template-areas: '.......'
+                         'headline'
+                         '........';
+    text-align: center;
+    background-color: #333;
+    color: white;
+    position: relative;
+  }
+  
+  .xp__headline {
+    grid-area: headline;
+    font-size: 2rem;
+    margin-bottom: .5em;
+  }
+  
+  @media (min-width: 640px) {
+    #xp {
+      background-color: transparent;
+      color: black;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas: '......... image'
+                           'headline  image'
+                           '......... image';
+      grid-column-gap: 20px;
+      text-align: left;
+    }
+  
+    .xp__image {
+      height: 100vh;
+      object-fit: cover;
+      mix-blend-mode: normal;
+    }
+  }
+  
+  /* Modal */
+  iframe {
+    width: 100%;
+  }
+  
+  #modal {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #fff;
+    width: 85%;
+    padding: 10px;
+  }
+  
+  @media (min-width: 1440px) {
+    .modal-content {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 45%;
+    }
+  }
+  
