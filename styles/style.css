@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-/* sybau 67 */
+/* Header */
 header {
   background-color: #e1e3c3;
   height: 160px;
@@ -25,30 +25,26 @@ header {
   width: 100%;
 }
 
-.logo{
+.logo {
   padding: 5px 50px;
   width: 100px;
 }
 
 nav {
-  color: white;
   float: right;
   padding: 40px 50px 0px 0px;
 }
 
-/* sybau 67 */
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* sybau 67 */
 nav li {
   display: inline-block;
 }
 
-/* sybau 67 */
 nav li a {
   color: rgb(149, 11, 11);
   padding: 14px 16px;
@@ -56,13 +52,10 @@ nav li a {
 }
 
 @media (min-width: 750px) {
-  
-  /*burger not display*/
   .toggle {
     display: none;
   }
 
-  /*menu in inline block*/
   #menu {
     margin: 0;
     padding: 15px 0;
@@ -72,12 +65,10 @@ nav li a {
     right: 0;
   }
 
-  /*items on menu are also an inline block*/
-  #menu li{
+  #menu li {
     display: inline-block;
   }
 
-  /*different styling for when mouse cursor hovered over menu items*/
   #menu li a:hover,
   #menu li a:focus {
     border: 2px solid #fff;
@@ -86,7 +77,8 @@ nav li a {
   }
 }
 
-.container{
+/* Mobile menu */
+.container {
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -94,8 +86,8 @@ nav li a {
   z-index: 999;
 }
 
-.menu-open{
-  transform: translate(-230px ,0)
+.menu-open {
+  transform: translate(-230px, 0);
 }
 
 #menu {
@@ -106,10 +98,11 @@ nav li a {
   position: fixed;
   margin: 0;
   right: -230px;
-  padding: 0px;
+  padding: 0;
 }
 
-#menu li a:hover li a:focus {
+#menu li a:hover,
+#menu li a:focus {
   border-color: transparent;
   background: #0077B6;
   color: #CAF0F8;
@@ -146,18 +139,11 @@ nav li a {
   transform: rotate(-45deg) translate(5px, -10px);
 }
 
-/*
-==========================================
-GRID STYLING
-==========================================
-*/
-
+/* Intro grid */
 #intro {
   display: grid;
-
-  grid-template-rows: [image-start] 10vw repeat(3, auto) 10vw [imgage-end];
+  grid-template-rows: [image-start] 10vw repeat(3, auto) 10vw [image-end];
   grid-template-columns: [image-start] 1fr [image-end];
-
   grid-template-areas: '....'
                        'headline'
                        'text'
@@ -166,8 +152,7 @@ GRID STYLING
   text-align: center;
   background-color: #333;
   color: white;
-  position: absolute;
-  top: 0;
+  position: relative;
 }
 
 .intro__headline {
@@ -181,7 +166,7 @@ GRID STYLING
   grid-area: text;
   margin-left: 1rem;
   margin-right: 1rem;
-  font: "libertinus-sans-regular";
+  font-family: "Libertinus Sans", sans-serif;
 }
 
 .intro__button {
@@ -198,7 +183,6 @@ GRID STYLING
 }
 
 @media (min-width: 640px) {
-
   #intro {
     background-color: transparent;
     color: black;
@@ -207,7 +191,7 @@ GRID STYLING
                           'headline image'
                           'text     image'
                           'button   image'
-                         '......... image';
+                          '......... image';
     grid-column-gap: 20px;
     text-align: left;
   }
@@ -217,24 +201,21 @@ GRID STYLING
     object-fit: cover;
     mix-blend-mode: normal;
   }
-
 }
 
-/*== styling for images in rent section ==*/
-
+/* Favourites section */
 #favourites {
   height: 100vh;
 }
 
 #favourites img {
-  position:absolute;
+  position: absolute;
   left: 0;
   height: 100vh;
   width: 100vw;
   object-fit: cover;
 }
 
-/*visual styling for text over images*/
 .info {
   position: absolute;
   margin-top: 2rem;
@@ -247,21 +228,11 @@ GRID STYLING
 }
 
 @keyframes FadeInOut {
-  0% {
-    opacity: 1;
-  }
-  45% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+  0%, 45% { opacity: 1; }
+  55%, 100% { opacity: 0; }
 }
 
-#rent img.image1 {
+#favourites img.image1 {
   animation-name: FadeInOut;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -269,8 +240,7 @@ GRID STYLING
   animation-direction: alternate;
 }
 
-/*==Styling for experience page ==*/
-
+/* XP section */
 #xp {
   display: grid;
   grid-template-rows: [image-start] 10vw auto 10vw [image-end];
@@ -278,21 +248,14 @@ GRID STYLING
   grid-template-areas: '.......'
                        'headline'
                        '........';
-text-align: center;
-background-color: #333;
-color: white;
-position: absolute;
-top: 0;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  position: relative;
 }
 
 .xp__headline {
   grid-area: headline;
-  height: 100vh;
-  object-fit: cover;
-  mix-blend-mode: overlay;
-}
-
-.xp_headline {
   font-size: 2rem;
   margin-bottom: .5em;
 }
@@ -305,8 +268,8 @@ top: 0;
     grid-template-areas: '......... image'
                          'headline  image'
                          '......... image';
-  grid-column-gap: 20px;
-  text-align: left;
+    grid-column-gap: 20px;
+    text-align: left;
   }
 
   .xp__image {
@@ -316,8 +279,7 @@ top: 0;
   }
 }
 
-/*==Styling for modal form==*/
-
+/* Modal */
 iframe {
   width: 100%;
 }
@@ -333,21 +295,20 @@ iframe {
   width: 100%;
 }
 
-.modalcontent {
+.modal-content {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50, 0);
+  transform: translate(-50%, 0);
   background: #fff;
   width: 85%;
   padding: 10px;
 }
 
-/*Adjustments for wide screen*/
 @media (min-width: 1440px) {
-  .modalcontent {
+  .modal-content {
     top: 50%;
-    transform: translate (-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 45%;
   }
 }
