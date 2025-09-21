@@ -278,4 +278,21 @@ GRID STYLING
   grid-template-areas: '.......'
                        'headline'
                        '........';
+text-align: center;
+background-color: #333;
+color: white;
+position: absolute;
+top: 0;
+}
+
+.xp__headline {
+  grid-area: headline;
+  height: 100vh;
+  object-fit: cover;
+  mix-blend-mode: overlay;
+}
+
+.xp_headline {
+  font-size: 2rem;
+  margin-bottom: .5em;
 }
